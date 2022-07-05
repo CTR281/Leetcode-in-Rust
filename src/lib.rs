@@ -1,5 +1,3 @@
-
-
 pub struct Solution;
 
 pub struct ShiftXorHasher {
@@ -1106,6 +1104,27 @@ impl Solution {
             ans = ans.max(i32::abs(next_end - prev_start) + 1)
         }
         ans
+    }
+
+    pub fn longest_consecutive_eon(nums: Vec<i32>) -> i32 {
+        use std::collections::HashMap;
+
+        let n = nums.len();
+        nums    
+            .into_iter()
+            .fold((HashMap::with_capacity(n), 0), |(mut seq, ans), num| {
+                let (mut prev_start, next_end) = (*seq.get(&(num - 1)).unwrap_or(&num), *seq.get(&(num + 1)).unwrap_or(&num));
+                if !seq.contains_key(&num) {
+                    seq.insert(num, num);
+                    *seq.get_mut(&prev_start).unwrap() = next_end;
+                    *seq.get_mut(&next_end).unwrap() = prev_start;
+                    (seq, ans.max(i32::abs(next_end - prev_start + 1)))
+                }
+                else {
+                    (seq, ans.max(1))
+                }
+            })
+            .1
     }
 
 
