@@ -1,1 +1,1 @@
-benches/reports/* linguist-vendored
+benches/reports/* linguist-detectable=false
