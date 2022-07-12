@@ -23,4 +23,6 @@ mod last_stone_weight;
 mod top_k_frequent;
 mod fib;
 mod fizz_buzz;
+mod right_side_view;
+mod make_square;
 pub struct Solution;
