@@ -25,4 +25,6 @@ mod fib;
 mod fizz_buzz;
 mod right_side_view;
 mod make_square;
+mod build_tree;
+mod max_area_of_island;
 pub struct Solution;
