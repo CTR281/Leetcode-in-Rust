@@ -27,4 +27,5 @@ mod right_side_view;
 mod make_square;
 mod build_tree;
 mod max_area_of_island;
+mod find_paths;
 pub struct Solution;
