@@ -29,4 +29,6 @@ mod build_tree;
 mod max_area_of_island;
 mod find_paths;
 mod num_submatrix_sum_target;
+mod generate;
+
 pub struct Solution;
